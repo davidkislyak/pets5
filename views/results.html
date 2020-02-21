@@ -1,0 +1,23 @@
+<!--
+ * Created in PhpStorm
+ * @date 1/24/2020
+ * @version 1.0
+ * results.html
+ * GreenRiverDev
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Results</title>
+</head>
+<body>
+    <h1>Results page</h1>
+    <p>Thank you for ordering a {{ @SESSION['animal']->getColor() }}
+        {{ @SESSION['animal']->getType() }} named {{ @SESSION['animal']->getName() }}!</p>
+    <p>{{ @SESSION['animal']->talk() }}</p>
+    <check if="{{ @SESSION['animal'] instanceof bat }}">
+        <p>{{ @SESSION['animal']->attack() }}</p>
+    </check>
+</body>
+</html>

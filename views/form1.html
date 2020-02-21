@@ -1,0 +1,29 @@
+<!--
+ * Created in PhpStorm
+ * @date 1/24/2020
+ * @version 1.0
+ * form1.html
+ * GreenRiverDev
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Animal</title>
+</head>
+<body>
+
+    <form method ="post" action ="#">
+        <div class = "col-sm-3">
+            <check if="{{ isset(@errors['animal']) }}">
+                <p>{{ @errors['animal'] }}</p>
+            </check>
+        </div>
+        <label>
+            Animal:
+            <input type ="text" name ="animal">
+        </label>
+        <button type ="submit">Next</button>
+    </form>
+</body>
+</html>
