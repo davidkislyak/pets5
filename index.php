@@ -6,6 +6,7 @@ ini_set('display_errors', 1);
 //require autoload file
 require_once('vendor/autoload.php');
 require_once('model/validation-functions.php');
+require_once('model/database.php');
 
 //session start
 session_start();
@@ -37,6 +38,11 @@ $f3->route('GET|POST /order2',
 
 $f3->route('GET /results', function () {
     $GLOBALS['controller']->results();
+});
+
+$f3->route('GET|POST /view', function()
+{
+	$GLOBALS['controller']->view();
 });
 
 //run fat free

@@ -1,6 +1,7 @@
 <?php
+require_once ("config-pet.php");
 
-public class database {
+class database {
 
 	private $_dbh;
 
@@ -11,6 +12,23 @@ public class database {
 		} catch (PDOException $e) {
 			echo $e->getMessage();
 		}
+	}
+
+	function getData() {
+		//1. Define query
+		$sql = "SELECT * FROM pets
+				ORDER BY pet_id";
+		//2. Prepare the statement
+		$statement = $this->_dbh->prepare($sql);
+
+		//3. Bind parameters
+
+		//4. Execute statement
+		$statement->execute();
+
+		//5. Get result
+		$result = $statement->fetchAll(PDO::FETCH_ASSOC);
+		return $result;
 	}
 
 }

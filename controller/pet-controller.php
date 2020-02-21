@@ -4,6 +4,8 @@ class PetController
 {
     private $_f3; //Router
 
+
+
     public function __construct($f3)
     {
         $this->_f3 = $f3;
@@ -64,6 +66,16 @@ class PetController
         $template = new Template();
         echo $template->render('views/form2.html');
     }
+
+    public function view() {
+		$pets = $GLOBALS['db']->getData();
+
+		$this->_f3->set('pets', $pets);
+
+		$template = new Template();
+    	echo $template->render('views/viewPets.html');
+
+	}
 
     public function results()
     {
