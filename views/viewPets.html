@@ -10,7 +10,7 @@
 <body>
 
 	<repeat group="{{ @pets }}" value="{{ @pet }}">
-		<li><a href="detail/{{ @pets['pet_id'] }}">{{ @pets['pet_id'] }} - {{ @pets['name'] }}</a></li>
+		<li><a href="{{ @pets['pet_id'] }}">{{ @pet['pet_id'] }} - {{ @pet['name'] }} - {{ @pet['color'] }} {{ @pet['type'] }}</a></li>
 	</repeat>
 </body>
 </html>

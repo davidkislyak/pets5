@@ -1,7 +1,7 @@
 <?php
 require_once ("config-pet.php");
 
-class database {
+class Database {
 
 	private $_dbh;
 

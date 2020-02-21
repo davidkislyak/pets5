@@ -6,7 +6,7 @@ ini_set('display_errors', 1);
 //require autoload file
 require_once('vendor/autoload.php');
 require_once('model/validation-functions.php');
-require_once('model/database.php');
+
 
 //session start
 session_start();
@@ -19,6 +19,7 @@ $f3->set('DEBUG', 3);
 
 $f3->set('colors', array('pink', 'green', 'blue'));
 $controller = new PetController($f3);
+$db = new Database();
 
 //define a default route
 $f3->route('GET /', function () {
