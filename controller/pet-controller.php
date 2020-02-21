@@ -19,9 +19,9 @@ class PetController
 
     public function order1($f3)
     {
-        if (isset($_POST['animal'])) {
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $animal = $_POST['animal'];
-
+            $_SESSION['animalType'] = $animal;
             if (validString($animal)) {
                 $_SESSION['animal'] = $animal;
 
@@ -49,11 +49,11 @@ class PetController
 
     public function order2($f3)
     {
-        if (isset($_POST['submit'])) {
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $name = $_POST['name'];
             $color = $_POST['color'];
-            $type = $_POST['type'];
             if (validColor($color)) {
+            	$type = $_SESSION['animalType'];
                 $_SESSION['animal']->setColor($color);
                 $_SESSION['animal']->setType($type);
                 $_SESSION['animal']->setName($name);
@@ -79,6 +79,8 @@ class PetController
 
     public function results()
     {
+    	$GLOBALS['db']->writePet();
+
         $view = new Template();
         echo $view->render('views/results.html');
     }

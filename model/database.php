@@ -31,4 +31,16 @@ class Database {
 		return $result;
 	}
 
+	function writePet() {
+		$sql = "INSERT INTO pets (pet_id, name, type, color)
+				VALUES (null, :name, :animalType, :color)";
+		$statement = $this->_dbh->prepare($sql);
+		$statement->bindParam(':name',$_SESSION['animal']->getName());
+		$statement->bindParam(':animalType',$_SESSION['animal']->getType());
+		$statement->bindParam(':color',$_SESSION['animal']->getColor());
+
+
+		$statement->execute();
+	}
+
 }
