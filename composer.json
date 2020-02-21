@@ -2,8 +2,8 @@
   "name": "davidgr1/328/pets4",
   "authors": [
     {
-      "name": "Brian Kiehn",
-      "email": "bkiehn@mail.greenriver.edu"
+      "name": "Taras Gorbachevskiy",
+      "email": "tgorbachevskiy@mail.greenriver.edu"
     },
     {
       "name": "David Kislyak",
@@ -14,6 +14,6 @@
     "bcosca/fatfree-core": "dev-master"
   },
   "autoload": {
-    "classmap": ["classes/", "controller/"]
+    "classmap": ["classes/", "controller/", "model/"]
   }
 }
